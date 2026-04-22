@@ -1,0 +1,6 @@
+# ignore datasets
+data/
+*.csv
+.ipynb_checkpoints/
+venv/
+__pycache__/
