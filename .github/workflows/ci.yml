@@ -1,3 +1,4 @@
+# Simple CI pipeline for dependency installation
 name: CI
 
 on:
