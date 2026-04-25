@@ -39,3 +39,7 @@ An interactive Streamlit dashboard is available to explore the climate data visu
 
 The dashboard reads from `data/<country>_clean.csv` files locally.
 On Streamlit Cloud it uses sample data from `sample_data/` folder.
+
+## 🌍 Live Dashboard
+
+**Deployed Dashboard:** https://climate-challenge-week0-g98shd72clsx6pwpmoxzvf.streamlit.app/

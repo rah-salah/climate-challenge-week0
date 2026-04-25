@@ -102,7 +102,7 @@ if not selected_countries:
 # ── LOAD DATA ──────────────────────────────────────────
 with st.spinner("Loading climate data..."):
     try:
-        df_raw = load_data(selected_countries, sample_only=not full_load)
+        df_raw = load_data(selected_countries, sample_only=False)
         if df_raw.empty:
             st.error("No data found. Make sure cleaned CSV files are in the data/ folder.")
             st.stop()
