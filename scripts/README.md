@@ -1,27 +1,22 @@
-# Dashboard Scripts
+## Interactive Dashboard
 
-This folder is reserved for utility scripts related to the
-African Climate Dashboard.
+An interactive Streamlit dashboard is available to explore the climate data visually.
 
-## Usage
+### Running Locally
 
-The main dashboard application is located in the `app/` folder.
-
-To run the dashboard locally:
-
-1. Make sure your virtual environment is active:
+1. Activate your virtual environment:
 
 ```bash
    source .venv/Scripts/activate
 ```
 
-2. Install streamlit if not already installed:
+2. Install dependencies:
 
 ```bash
-   pip install streamlit
+   pip install -r requirements.txt
 ```
 
-3. Run the app from the project root folder:
+3. Run the dashboard:
 
 ```bash
    streamlit run app/main.py
@@ -29,8 +24,18 @@ To run the dashboard locally:
 
 4. Open your browser at:http://localhost:8501
 
-## Notes
+### Dashboard Features
 
-- The app reads data from the `data/` folder
-- Make sure all cleaned CSV files are present in `data/`
-- The `data/` folder is excluded from GitHub via `.gitignore`
+- Country multi-select to filter by country
+- Year range slider to zoom into specific periods
+- Variable selector dropdown (T2M, PRECTOTCORR, RH2M, etc.)
+- Temperature trend line chart
+- Rainfall distribution boxplot
+- Summary statistics table
+- Climate vulnerability ranking
+- Kruskal-Wallis statistical test results
+
+### Note on Data
+
+The dashboard reads from `data/<country>_clean.csv` files locally.
+On Streamlit Cloud it uses sample data from `sample_data/` folder.
