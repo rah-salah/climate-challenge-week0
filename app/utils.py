@@ -15,11 +15,10 @@ COLORS = {
 }
 
 @st.cache_data
-def load_data(countries, sample_only=True, sample_rows=10000):
+def load_data(countries, sample_only=False, sample_rows=10000):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(current_dir)
 
-    # Try data/ first, then sample_data/ as fallback
     data_dir = os.path.join(project_root, "data")
     sample_dir = os.path.join(project_root, "sample_data")
 
@@ -29,14 +28,13 @@ def load_data(countries, sample_only=True, sample_rows=10000):
         sample_path = os.path.join(sample_dir, f"{country.lower()}_clean.csv")
 
         if os.path.exists(path):
-            if sample_only:
-                df = pd.read_csv(path, parse_dates=["Date"], nrows=sample_rows)
-            else:
-                df = pd.read_csv(path, parse_dates=["Date"])
+            df = pd.read_csv(path, parse_dates=["Date"])
             frames.append(df)
         elif os.path.exists(sample_path):
             df = pd.read_csv(sample_path, parse_dates=["Date"])
             frames.append(df)
+        else:
+            st.warning(f"No data found for {country}")
 
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
