@@ -1,6 +1,28 @@
-# ignore datasets
+# Data files — NASA CSV datasets (too large for GitHub)
 data/
-*.csv
+
+# Jupyter notebook checkpoints
 .ipynb_checkpoints/
+
+# Virtual environments
+.venv/
 venv/
+env/
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
